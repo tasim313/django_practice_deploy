@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="POST">
+    {{ signup.as_p }}
+    {% csrf_token %}
+    <input type="submit" name="submit" value="submit">
+</form>
+<hr>
+    <table>
+        {% if form_submited %}
+            <p>User Name : {{ username }}</p>
+            <p>First Name : {{ First_Name }}</p>
+            <p>Last Name : {{ Last_Name }}</p>
+            <p>Address: {{ address }}</p>
+            <p>Email : {{ email }}</p>
+            <p>password: {{ password }}</p>
+            <p>Phone : {{ phone }}</p>
+            <p>Date Of Birth : {{ dob }}</p>
+        {% endif %}
+    </table>
+</body>
+</html>

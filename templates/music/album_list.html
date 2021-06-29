@@ -1,0 +1,29 @@
+{% extends 'music/base.html' %}
+{% block body_block %}
+    <h1>Musician </h1>
+    <h1>Artist Name : {{ artist_info.first_name }}   {{ artist_info.last_name }}</h1>
+    <h1>Instrument :  {{ artist_info.instrument }}</h1>
+    <h1>Artist rating: {{ artist_rating.num_star__avg }}</h1>
+    <br>
+    <h6><a href="{% url 'customer:edit_artist' artist_id=artist_info.id %}" class="btn btn-primary btn-sm">Edit</a></h6>
+    <hr>
+    <h1> List of Album </h1>
+    <table class="table table-bordered">
+    <tr>
+        <th>Album Name</th>
+        <th>Release Date</th>
+        <th>Rating</th>
+    </tr>
+    {% for album in album_list %}
+        <tr>
+        <td>
+           <a href="{% url 'customer:edit_album' album_id=album.id %}"> {{ album.name }} </a>
+        </td>
+        <td> {{ album.release_date }}</td>
+        <td>{{ album.num_star }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+    <br>
+    <a href="{% url 'customer:delete_musician' artist_id=artist_info.id %}" onclick="return confirm('Delete Musician')" class="btn btn-danger btn-sm">Delete</a>
+{% endblock %}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Home</title>
+</head>
+<body>
+<h1>Customer Information</h1>
+<form action="" method="POST">
+    {{ new_from.as_p }}
+    {% csrf_token %}
+    <input type="submit" name="submit" value="submit">
+</form>
+<a href="{% url 'customer:index' %}">Index</a>
+</body>
+</html>

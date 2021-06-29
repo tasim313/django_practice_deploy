@@ -1,0 +1,10 @@
+{% extends 'music/base.html' %}
+
+{% block body_block %}
+<h1>Edit Album</h1>
+    <form method="POST">
+     {{ form.as_p }}
+    {% csrf_token %}
+    <input type="submit" name="submit" value="Update" class="btn btn-info btn-sm">   <a href="{% url 'customer:delete_album' album_id=album_id %}" class="btn btn-danger btn-sm" onclick="return confirm('Delete This Album')">Delete</a>
+    </form>
+{% endblock %}

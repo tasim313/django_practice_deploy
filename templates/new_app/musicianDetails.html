@@ -1,0 +1,16 @@
+{% extends 'new_app/base.html' %}
+{% block body_block %}
+   <h3>Musician Details</h3>
+    <h3>First Name: {{ musician.first_name }}</h3>
+    <h3>Last Name: {{ musician.last_name }}</h3>
+    <h3>Instrument: {{ musician.instrument }}</h3>
+    <br>
+    <h3>Album List</h3>
+    <ul>
+    {% for album in musician.album_list.all %}
+        <h3>Album Name: {{ album.name }}</h3>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'first:update_musician' pk=musician.pk %}">Update</a>
+    <a href="{% url 'first:delete_musician' pk=musician.pk %}" class="btn btn-danger btn-sm">Delete</a>
+{% endblock %}

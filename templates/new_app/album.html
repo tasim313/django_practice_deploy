@@ -1,0 +1,8 @@
+{% extends 'new_app/base.html' %}
+{% block body_block %}
+   {% for album in album_list %}
+       <ul>
+       <li>Album Name:{{ album.name }} <br> Artist Name: {{ album.artist }}</li>
+       </ul>
+    {% endfor %}
+{% endblock %}

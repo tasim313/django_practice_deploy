@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<hr>
+<h1>Input Value</h1>
+<form action="" method="POST">
+    {{ new_form.as_p }}
+    {% csrf_token %}
+    <input type="submit", name="submit", value="submit">
+</form>
+<hr>
+<h1>Output value</h1>
+{% if form_submited %}
+    <p>BooleanField: {{ booleanField }}</p>
+    <p>CharField: {{ charfield }}</p>
+    <p>ChoiseField: {{ choisefield }}</p>
+    <p>Option: {{ value }}</p>
+    <p>Radio Button: {{ radio_button }}</p>
+    <p>Multiple Choise : {{ multipulchoise }}</p>
+    <p>Multiple Check Box : {{ multipulcheckbox }}</p>
+{% endif %}
+</body>
+</html>

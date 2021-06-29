@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<h1>Customer Information</h1>
+<a href="{% url 'customer:home' %}">Add New</a>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Ipaddress</th>
+        <th>Contact</th>
+    </tr>
+    {% for value in customer_list %}
+        <tr>
+            <td>
+                {{ value.id }}
+            </td>
+            <td>{{ value.name }}</td>
+            <td>{{ value.address }}</td>
+            <td>{{ value.ipaddress }}</td>
+            <td>{{ value.contact }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<hr>
+
+<h2>{{ sample_text|upper }}</h2>
+<h2>Cut {{ sample_text|cut:'t' }}</h2>
+<br>
+<h2>{{ customer.ipaddress }}</h2>
+<h4>{{ add|add:7 }}</h4>
+<hr>
+{% load my_filtiers %}
+<h3>{{ sample_text|custom_filter }}</h3>
+</body>
+</html>
