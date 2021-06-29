@@ -7,7 +7,7 @@ https://khan313.pythonanywhere.com/login/login/
 url:
 fromapp url : https://khan313.pythonanywhere.com/customer/home/
 
-newapp url : https://khan313.pythonanywhere.com/new_app/
+newapp url : https://khan313.pythonanywhere.com/new_app/musician/
 
 
 loginapp url : https://khan313.pythonanywhere.com/login/login/
